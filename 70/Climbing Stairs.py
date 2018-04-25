@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+__author__ = 'Albino'
+
+class Solution:
+    def climbStairs(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        if n < 1:
+            return 0
+        if n == 1:
+            return 1
+        if n == 2:
+            return 2
+        a, b = 1, 2
+        for i in range(3, n + 1):
+            a, b = b, a + b
+        return b
+        # return self.climbStairs(n - 1) + self.climbStairs(n - 2)
+
+
+if __name__ == '__main__':
+    s = Solution()
+    print(s.climbStairs(5))
